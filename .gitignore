@@ -1,0 +1,13 @@
+/target/
+/logs/
+
+.classpath
+
+.settings/
+
+.project
+/bin/
+
+/test-output/
+
+.DS_Store
