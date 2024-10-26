@@ -11,3 +11,4 @@
 /test-output/
 
 .DS_Store
+/allure-results/
