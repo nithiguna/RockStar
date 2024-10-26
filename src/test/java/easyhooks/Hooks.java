@@ -1,3 +1,4 @@
+
 package easyhooks;
 
 
@@ -37,8 +38,9 @@ public class Hooks {
 		}
 	}
 	@After
-	public void quitbrowser() {
-		//DriverManager.getDriver().close();
+	public void quitbrowser() throws InterruptedException {
+		Thread.sleep(6000);
+		DriverManager.getDriver().close();
 
 	}
 

@@ -35,34 +35,43 @@ public class BatchStep {
 		@Then("Admin should be in the Manage Batch Page")
 		public void admin_should_be_in_the_manage_batch_page() {
 		   
-			Assert.assertEquals(batchObj.manageBatchgetText(), configFileReader.getFunctionalityMessage("batchPage"));
+			Assert.assertEquals(batchObj.manageBatchgetText(), configFileReader.getFunctionalityMessage("batch"));
 			LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	//
 		}
 
 		//-----------02----------------------------
 		
-		@Then("Admin should see the {string} Title")
-		public void admin_should_see_the_title(String string) {
-		   
-		   
+//		@Then("Admin should see the LMS Learning Management System Title")
+//		public void admin_should_see_LMS_Learning_Management_System_Title {
+//			Assert.assertEquals(batchObj.manageBatchgetText(), configFileReader.getFunctionalityMessage("batch"));
+//			LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
+//		   
+//		}
+		@Then("Admin should see the LMS Learning Management System Title")
+		public void admin_should_see_the_lms_learning_management_system_title() {
+			Assert.assertEquals(batchObj.getActualTitle(), configFileReader.getFunctionalityMessage("batch"));
+			LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 		}
 
 		@Then("Admin should see the {string} Heading")
 		public void admin_should_see_the_heading(String string) {
-		   
+			Assert.assertEquals(batchObj.getActualTitle(), configFileReader.getFunctionalityMessage("batch"));
+			LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 		   
 		}
 
-		@Then("Admin should see the disabled {string} under the header")
-		public void admin_should_see_the_disabled_under_the_header(String string) {
-		   
-		   
+		@Then("Admin should see the disabled Delete Icon under the header")
+		public void admin_should_see_the_disabled_delete_icon_under_the_header() {
+			
+			Assert.assertTrue(batchObj.deleteIconIsDisabled(),"Delete Icon in Manage Batch is Enabled");
+			LoggerLoad.info("Manage Batch Delete Icon is Disabled = " +batchObj.deleteIconIsDisabled());
 		}
 
 		@Then("Admin should see the enabled pagination controls under the data table")
 		public void admin_should_see_the_enabled_pagination_controls_under_the_data_table() {
-		   
+			Assert.assertTrue(batchObj.isPaginationEnabled(),"Pagination in Batch Page is not Enabled");
+			LoggerLoad.info("Pagination in Batch Page is Enabled = " +batchObj.isPaginationEnabled());
 		   
 		}
 
@@ -437,5 +446,3 @@ public class BatchStep {
 
 
 	}
-
-
