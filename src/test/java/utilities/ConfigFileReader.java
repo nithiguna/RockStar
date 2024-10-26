@@ -146,5 +146,12 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException(funcName + " does not match in the Configuration.properties file.");
 	}
+	public String disabledFunctionality(String functionalityValue) {
+		String funcValue = properties.getProperty(functionalityValue);
+		if (funcValue != null)
+			return funcValue;
+		else
+			throw new RuntimeException(funcValue + " does not match in the Configuration.properties file.");
+	}
 
 }

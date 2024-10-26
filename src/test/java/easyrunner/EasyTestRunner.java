@@ -16,7 +16,7 @@ import utilities.ConfigFileReader;
 	    glue = {"easystepDefinitions","easyhooks"},
 	    monochrome = true,
 
-	   tags= "@EasyLogin",
+	   tags= "@BatchTC_003",
 	   		// "or @EasyBatchPageNavigation",
 	    plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
 	    		//"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
